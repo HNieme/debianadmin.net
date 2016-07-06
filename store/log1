@@ -1,0 +1,69 @@
+root@Mineosis-deb:/etc/apache2# su harald
+Kein Passworteintrag für Benutzer »harald«
+root@Mineosis-deb:/etc/apache2# su mineosis
+mineosis@Mineosis-deb:/etc/apache2$ mkdir ~/public_html && chmod 0755 ~/public_html
+mineosis@Mineosis-deb:/etc/apache2$ nano /etc/apache2/mods-available/php5.conf
+mineosis@Mineosis-deb:/etc/apache2$ cd /etc/apache2/mods-available
+mineosis@Mineosis-deb:/etc/apache2/mods-available$ ls
+actions.conf        authnz_ldap.load      cgi.load           dump_io.load     ldap.load          proxy_balancer.conf  setenvif.load
+actions.load        authz_dbm.load        charset_lite.load  env.load         log_forensic.load  proxy_balancer.load  speling.load
+alias.conf          authz_default.load    dav_fs.conf        expires.load     mem_cache.conf     proxy.conf           ssl.conf
+alias.load          authz_groupfile.load  dav_fs.load        ext_filter.load  mem_cache.load     proxy_connect.load   ssl.load
+asis.load           authz_host.load       dav.load           file_cache.load  mime.conf          proxy_ftp.conf       status.conf
+auth_basic.load     authz_owner.load      dav_lock.load      filter.load      mime.load          proxy_ftp.load       status.load
+auth_digest.load    authz_user.load       dbd.load           headers.load     mime_magic.conf    proxy_http.load      substitute.load
+authn_alias.load    autoindex.conf        deflate.conf       ident.load       mime_magic.load    proxy.load           suexec.load
+authn_anon.load     autoindex.load        deflate.load       imagemap.load    mod-dnssd.conf     proxy_scgi.load      unique_id.load
+authn_dbd.load      cache.load            dir.conf           include.load     mod-dnssd.load     reqtimeout.conf      userdir.conf
+authn_dbm.load      cern_meta.load        dir.load           info.conf        negotiation.conf   reqtimeout.load      userdir.load
+authn_default.load  cgid.conf             disk_cache.conf    info.load        negotiation.load   rewrite.load         usertrack.load
+authn_file.load     cgid.load             disk_cache.load    ldap.conf        proxy_ajp.load     setenvif.conf        vhost_alias.load
+mineosis@Mineosis-deb:/etc/apache2/mods-available$ cd .. ..
+mineosis@Mineosis-deb:/etc/apache2$ cd .. ..
+mineosis@Mineosis-deb:/etc$ cd php5
+bash: cd: php5: Datei oder Verzeichnis nicht gefunden
+mineosis@Mineosis-deb:/etc$ ls
+acpi                    deluser.conf            hostname         login.defs        pcmcia                   services
+adduser.conf            dhcp                    hosts            logrotate.conf    perl                     sgml
+adjtime                 dhcp3                   hosts.allow      logrotate.d       pkcs11                   shadow
+aliases                 dictionaries-common     hosts.deny       magic             pm                       shadow-
+alternatives            discover.conf.d         hotplug          magic.mime        pnm2ppa.conf             shells
+anacrontab              discover-modprobe.conf  hp               mailcap           polkit-1                 skel
+apache2                 dpkg                    icedove          mailcap.order     popularity-contest.conf  snmp
+apg.conf                drirc                   icedtea-web      mailname          ppp                      sound
+apm                     eclipse.ini             iceweasel        mail.rc           printcap                 speech-dispatcher
+apt                     emacs                   idmapd.conf      manpath.config    profile                  ssh
+at.deny                 email-addresses         ifplugd          menu              profile.d                ssl
+at-spi2                 environment             ImageMagick      menu-methods      protocols                staff-group-for-usr-local
+avahi                   exim4                   init             mime.types        pulse                    sudoers
+bash.bashrc             fonts                   init.d           mke2fs.conf       purple                   sudoers.d
+bash_completion         foomatic                initramfs-tools  modprobe.d        python                   sysctl.conf
+bash_completion.d       fstab                   inittab          modules           python2.6                sysctl.d
+bindresvport.blacklist  fstab.d                 inputrc          mono              python2.7                systemd
+blkid.tab               fuse.conf               insserv          motd              rc0.d                    terminfo
+blkid.tab.old           gai.conf                insserv.conf     mtab              rc1.d                    texmf
+bluetooth               gconf                   insserv.conf.d   Muttrc            rc2.d                    timezone
+bogofilter.cf           gdm3                    iproute2         Muttrc.d          rc3.d                    timidity
+bonobo-activation       geogebra                issue            mysql             rc4.d                    ts.conf
+ca-certificates         ghostscript             issue.net        nanorc            rc5.d                    ucf.conf
+ca-certificates.conf    gimp                    java-6-openjdk   netconfig         rc6.d                    udev
+calendar                gnashpluginrc           java-7-openjdk   network           rc.local                 ufw
+chatscripts             gnashrc                 kbd              NetworkManager    rcS.d                    updatedb.conf
+clutter-imcontext       gnashthumbnailrc        kernel           networks          reportbug.conf           UPower
+colord.conf             gnome                   kernel-img.conf  nsswitch.conf     resolvconf               usb_modeswitch.conf
+ConsoleKit              gnome-vfs-2.0           ldap             obex-data-server  resolv.conf              usb_modeswitch.d
+console-setup           gnome-vfs-mime-magic    ld.so.cache      ODBCDataSources   rmt                      vim
+cron.d                  groff                   ld.so.conf       odbc.ini          rpc                      vlc
+cron.daily              group                   ld.so.conf.d     odbcinst.ini      rsyslog.conf             w3m
+cron.hourly             group-                  libao.conf       openal            rsyslog.d                wgetrc
+cron.monthly            grub.d                  libaudit.conf    opt               rygel.conf               wildmidi
+crontab                 gshadow                 libnl-3          os-release        samba                    wpa_supplicant
+cron.weekly             gshadow-                libpaper.d       PackageKit        sane.d                   X11
+cups                    gssapi_mech.conf        libreoffice      pam.conf          securetty                xdg
+dbus-1                  gtk-2.0                 locale.alias     pam.d             security                 xml
+debconf.conf            gtk-3.0                 locale.gen       papersize         selinux
+debian_version          hdparm.conf             localtime        passwd            sensors3.conf
+default                 host.conf               logcheck         passwd-           sensors.d
+mineosis@Mineosis-deb:/etc$ chmod 0755 ~/public_html
+mineosis@Mineosis-deb:/etc$ chmod -R 0755 ~/public_html
+mineosis@Mineosis-deb:/etc$ 

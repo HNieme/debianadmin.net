@@ -1,0 +1,20 @@
+root@Mineosis-deb:/home/mineosis# cd /etc/apache2
+root@Mineosis-deb:/etc/apache2# ls
+apache2.conf  envvars  mods-available  ports.conf	sites-enabled
+conf.d	      magic    mods-enabled    sites-available
+root@Mineosis-deb:/etc/apache2# nano conf.d
+root@Mineosis-deb:/etc/apache2# cd conf.d
+root@Mineosis-deb:/etc/apache2/conf.d# ls
+charset  localized-error-pages	other-vhosts-access-log  security
+root@Mineosis-deb:/etc/apache2/conf.d# cd ..
+root@Mineosis-deb:/etc/apache2# ls
+apache2.conf  envvars  mods-available  ports.conf	sites-enabled
+conf.d	      magic    mods-enabled    sites-available
+root@Mineosis-deb:/etc/apache2# nano apache2.conf
+root@Mineosis-deb:/etc/apache2# a2enmod userdir
+Enabling module userdir.
+To activate the new configuration, you need to run:
+  service apache2 restart
+root@Mineosis-deb:/etc/apache2# service apache2 restart
+[ ok ] Restarting web server: apache2 ... waiting .
+root@Mineosis-deb:/etc/apache2# 

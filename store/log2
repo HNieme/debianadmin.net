@@ -1,0 +1,271 @@
+root@Mineosis-deb:/etc/apache2# cd /etc/php
+bash: cd: /etc/php: Datei oder Verzeichnis nicht gefunden
+root@Mineosis-deb:/etc/apache2# cd /etc/php4
+bash: cd: /etc/php4: Datei oder Verzeichnis nicht gefunden
+root@Mineosis-deb:/etc/apache2# cd /etc/php5
+bash: cd: /etc/php5: Datei oder Verzeichnis nicht gefunden
+root@Mineosis-deb:/etc/apache2# cd /etc/apache2
+root@Mineosis-deb:/etc/apache2# ls
+apache2.conf  conf.d  envvars  magic  mods-available  mods-enabled  ports.conf	sites-available  sites-enabled
+root@Mineosis-deb:/etc/apache2# cd conf.d
+root@Mineosis-deb:/etc/apache2/conf.d# ls
+charset  localized-error-pages	other-vhosts-access-log  security
+root@Mineosis-deb:/etc/apache2/conf.d# cd ..
+root@Mineosis-deb:/etc/apache2# ls
+apache2.conf  conf.d  envvars  magic  mods-available  mods-enabled  ports.conf	sites-available  sites-enabled
+root@Mineosis-deb:/etc/apache2# cd mods-available
+root@Mineosis-deb:/etc/apache2/mods-available# ls
+actions.conf	    authnz_ldap.load	  cgi.load	     dump_io.load     ldap.load		 proxy_balancer.conf  setenvif.load
+actions.load	    authz_dbm.load	  charset_lite.load  env.load	      log_forensic.load  proxy_balancer.load  speling.load
+alias.conf	    authz_default.load	  dav_fs.conf	     expires.load     mem_cache.conf	 proxy.conf	      ssl.conf
+alias.load	    authz_groupfile.load  dav_fs.load	     ext_filter.load  mem_cache.load	 proxy_connect.load   ssl.load
+asis.load	    authz_host.load	  dav.load	     file_cache.load  mime.conf		 proxy_ftp.conf       status.conf
+auth_basic.load     authz_owner.load	  dav_lock.load      filter.load      mime.load		 proxy_ftp.load       status.load
+auth_digest.load    authz_user.load	  dbd.load	     headers.load     mime_magic.conf	 proxy_http.load      substitute.load
+authn_alias.load    autoindex.conf	  deflate.conf	     ident.load       mime_magic.load	 proxy.load	      suexec.load
+authn_anon.load     autoindex.load	  deflate.load	     imagemap.load    mod-dnssd.conf	 proxy_scgi.load      unique_id.load
+authn_dbd.load	    cache.load		  dir.conf	     include.load     mod-dnssd.load	 reqtimeout.conf      userdir.conf
+authn_dbm.load	    cern_meta.load	  dir.load	     info.conf	      negotiation.conf	 reqtimeout.load      userdir.load
+authn_default.load  cgid.conf		  disk_cache.conf    info.load	      negotiation.load	 rewrite.load	      usertrack.load
+authn_file.load     cgid.load		  disk_cache.load    ldap.conf	      proxy_ajp.load	 setenvif.conf	      vhost_alias.load
+root@Mineosis-deb:/etc/apache2/mods-available# apt-get install php5
+Paketlisten werden gelesen... Fertig
+Abhängigkeitsbaum wird aufgebaut.       
+Statusinformationen werden eingelesen.... Fertig
+Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
+  javahelp2 libbackport-util-concurrent-java libcollections15-java libcommons-math-java libdom4j-java libfreehep-export-java
+  libfreehep-graphics2d-java libfreehep-graphicsio-emf-java libfreehep-graphicsio-java libfreehep-graphicsio-pdf-java libfreehep-graphicsio-svg-java
+  libfreehep-graphicsio-tests-java libfreehep-io-java libfreehep-swing-java libfreehep-util-java libfreehep-xml-java libjas-java libjas-plotter-java
+  libjaxen-java libjaxme-java libjcommon-java libjdom1-java libjfreechart-java libjfugue-java libjlatexmath-java libnb-org-openide-util-java
+  libnb-org-openide-util-lookup-java librhino-java libtablelayout-java libxom-java libxpp2-java libxpp3-java mathpiper
+Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
+Die folgenden zusätzlichen Pakete werden installiert:
+  apache2-mpm-prefork libapache2-mod-php5 libonig2 libqdbm14 php5-cli php5-common
+Vorgeschlagene Pakete:
+  php-pear
+Die folgenden Pakete werden ENTFERNT:
+  apache2-mpm-worker
+Die folgenden NEUEN Pakete werden installiert:
+  apache2-mpm-prefork libapache2-mod-php5 libonig2 libqdbm14 php5 php5-cli php5-common
+0 aktualisiert, 7 neu installiert, 1 zu entfernen und 29 nicht aktualisiert.
+Es müssen 6237 kB an Archiven heruntergeladen werden.
+Nach dieser Operation werden 19,2 MB Plattenplatz zusätzlich benutzt.
+Möchten Sie fortfahren [J/n]? y
+WARNUNG: Die folgenden Pakete können nicht authentifiziert werden!
+  apache2-mpm-prefork php5-common libonig2 libqdbm14 libapache2-mod-php5 php5 php5-cli
+Diese Pakete ohne Überprüfung installieren [j/N]? n
+E: Einige Pakete konnten nicht authentifiziert werden.
+root@Mineosis-deb:/etc/apache2/mods-available# apt-get install php
+Paketlisten werden gelesen... Fertig
+Abhängigkeitsbaum wird aufgebaut.       
+Statusinformationen werden eingelesen.... Fertig
+E: Paket php kann nicht gefunden werden.
+root@Mineosis-deb:/etc/apache2/mods-available# apt-get install php5
+Paketlisten werden gelesen... Fertig
+Abhängigkeitsbaum wird aufgebaut.       
+Statusinformationen werden eingelesen.... Fertig
+Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
+  javahelp2 libbackport-util-concurrent-java libcollections15-java libcommons-math-java libdom4j-java libfreehep-export-java
+  libfreehep-graphics2d-java libfreehep-graphicsio-emf-java libfreehep-graphicsio-java libfreehep-graphicsio-pdf-java libfreehep-graphicsio-svg-java
+  libfreehep-graphicsio-tests-java libfreehep-io-java libfreehep-swing-java libfreehep-util-java libfreehep-xml-java libjas-java libjas-plotter-java
+  libjaxen-java libjaxme-java libjcommon-java libjdom1-java libjfreechart-java libjfugue-java libjlatexmath-java libnb-org-openide-util-java
+  libnb-org-openide-util-lookup-java librhino-java libtablelayout-java libxom-java libxpp2-java libxpp3-java mathpiper
+Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
+Die folgenden zusätzlichen Pakete werden installiert:
+  apache2-mpm-prefork libapache2-mod-php5 libonig2 libqdbm14 php5-cli php5-common
+Vorgeschlagene Pakete:
+  php-pear
+Die folgenden Pakete werden ENTFERNT:
+  apache2-mpm-worker
+Die folgenden NEUEN Pakete werden installiert:
+  apache2-mpm-prefork libapache2-mod-php5 libonig2 libqdbm14 php5 php5-cli php5-common
+0 aktualisiert, 7 neu installiert, 1 zu entfernen und 29 nicht aktualisiert.
+Es müssen 6237 kB an Archiven heruntergeladen werden.
+Nach dieser Operation werden 19,2 MB Plattenplatz zusätzlich benutzt.
+Möchten Sie fortfahren [J/n]? y
+WARNUNG: Die folgenden Pakete können nicht authentifiziert werden!
+  apache2-mpm-prefork php5-common libonig2 libqdbm14 libapache2-mod-php5 php5 php5-cli
+Diese Pakete ohne Überprüfung installieren [j/N]? y
+Holen: 1 http://security.debian.org/ wheezy/updates/main php5-common amd64 5.4.45-0+deb7u2 [627 kB]       
+Holen: 2 http://gd.tuwien.ac.at/opsys/linux/debian/ wheezy/main apache2-mpm-prefork amd64 2.2.22-13+deb7u6 [2354 B]
+Holen: 3 http://gd.tuwien.ac.at/opsys/linux/debian/ wheezy/main libonig2 amd64 5.9.1-1 [145 kB]
+Holen: 4 http://security.debian.org/ wheezy/updates/main libapache2-mod-php5 amd64 5.4.45-0+deb7u2 [2710 kB]
+Holen: 5 http://gd.tuwien.ac.at/opsys/linux/debian/ wheezy/main libqdbm14 amd64 1.8.78-2 [153 kB]                                                    
+Holen: 6 http://security.debian.org/ wheezy/updates/main php5 all 5.4.45-0+deb7u2 [1028 B]                                                           
+Holen: 7 http://security.debian.org/ wheezy/updates/main php5-cli amd64 5.4.45-0+deb7u2 [2598 kB]                                                    
+Es wurden 6237 kB in 26 s geholt (238 kB/s).                                                                                                         
+dpkg: apache2-mpm-worker: Abhängigkeitsprobleme, wird aber wie gefordert dennoch entfernt:
+ apache2 hängt ab von apache2-mpm-worker (= 2.2.22-13+deb7u6) | apache2-mpm-prefork (= 2.2.22-13+deb7u6) | apache2-mpm-event (= 2.2.22-13+deb7u6) | apache2-mpm-itk (= 2.2.22-13+deb7u6); aber:
+  Paket apache2-mpm-worker soll entfernt werden.
+  Paket apache2-mpm-prefork ist nicht installiert.
+  Paket apache2-mpm-event ist nicht installiert.
+  Paket apache2-mpm-itk ist nicht installiert.
+
+(Lese Datenbank ... 160090 Dateien und Verzeichnisse sind derzeit installiert.)
+Entfernen von apache2-mpm-worker ...
+[ ok ] Stopping web server: apache2 ... waiting .
+Vormals nicht ausgewähltes Paket apache2-mpm-prefork wird gewählt.
+(Lese Datenbank ... 160086 Dateien und Verzeichnisse sind derzeit installiert.)
+Entpacken von apache2-mpm-prefork (aus .../apache2-mpm-prefork_2.2.22-13+deb7u6_amd64.deb) ...
+apache2-mpm-prefork (2.2.22-13+deb7u6) wird eingerichtet ...
+[ ok ] Starting web server: apache2.
+Vormals nicht ausgewähltes Paket php5-common wird gewählt.
+(Lese Datenbank ... 160091 Dateien und Verzeichnisse sind derzeit installiert.)
+Entpacken von php5-common (aus .../php5-common_5.4.45-0+deb7u2_amd64.deb) ...
+Vormals nicht ausgewähltes Paket libonig2 wird gewählt.
+Entpacken von libonig2 (aus .../libonig2_5.9.1-1_amd64.deb) ...
+Vormals nicht ausgewähltes Paket libqdbm14 wird gewählt.
+Entpacken von libqdbm14 (aus .../libqdbm14_1.8.78-2_amd64.deb) ...
+Vormals nicht ausgewähltes Paket libapache2-mod-php5 wird gewählt.
+Entpacken von libapache2-mod-php5 (aus .../libapache2-mod-php5_5.4.45-0+deb7u2_amd64.deb) ...
+Vormals nicht ausgewähltes Paket php5 wird gewählt.
+Entpacken von php5 (aus .../php5_5.4.45-0+deb7u2_all.deb) ...
+Vormals nicht ausgewähltes Paket php5-cli wird gewählt.
+Entpacken von php5-cli (aus .../php5-cli_5.4.45-0+deb7u2_amd64.deb) ...
+Trigger für man-db werden verarbeitet ...
+php5-common (5.4.45-0+deb7u2) wird eingerichtet ...
+
+Creating config file /etc/php5/mods-available/pdo.ini with new version
+libonig2 (5.9.1-1) wird eingerichtet ...
+libqdbm14 (1.8.78-2) wird eingerichtet ...
+libapache2-mod-php5 (5.4.45-0+deb7u2) wird eingerichtet ...
+
+Creating config file /etc/php5/apache2/php.ini with new version
+[ ok ] Restarting web server: apache2 ... waiting .
+php5 (5.4.45-0+deb7u2) wird eingerichtet ...
+php5-cli (5.4.45-0+deb7u2) wird eingerichtet ...
+
+Creating config file /etc/php5/cli/php.ini with new version
+update-alternatives: /usr/bin/php5 wird verwendet, um /usr/bin/php (php) im Auto-Modus bereitzustellen
+root@Mineosis-deb:/etc/apache2/mods-available# ls
+actions.conf	    authz_dbm.load	  dav_fs.conf	   ext_filter.load    mime.conf		   proxy_connect.load  status.conf
+actions.load	    authz_default.load	  dav_fs.load	   file_cache.load    mime.load		   proxy_ftp.conf      status.load
+alias.conf	    authz_groupfile.load  dav.load	   filter.load	      mime_magic.conf	   proxy_ftp.load      substitute.load
+alias.load	    authz_host.load	  dav_lock.load    headers.load       mime_magic.load	   proxy_http.load     suexec.load
+asis.load	    authz_owner.load	  dbd.load	   ident.load	      mod-dnssd.conf	   proxy.load	       unique_id.load
+auth_basic.load     authz_user.load	  deflate.conf	   imagemap.load      mod-dnssd.load	   proxy_scgi.load     userdir.conf
+auth_digest.load    autoindex.conf	  deflate.load	   include.load       negotiation.conf	   reqtimeout.conf     userdir.load
+authn_alias.load    autoindex.load	  dir.conf	   info.conf	      negotiation.load	   reqtimeout.load     usertrack.load
+authn_anon.load     cache.load		  dir.load	   info.load	      php5.conf		   rewrite.load        vhost_alias.load
+authn_dbd.load	    cern_meta.load	  disk_cache.conf  ldap.conf	      php5.load		   setenvif.conf
+authn_dbm.load	    cgid.conf		  disk_cache.load  ldap.load	      proxy_ajp.load	   setenvif.load
+authn_default.load  cgid.load		  dump_io.load	   log_forensic.load  proxy_balancer.conf  speling.load
+authn_file.load     cgi.load		  env.load	   mem_cache.conf     proxy_balancer.load  ssl.conf
+authnz_ldap.load    charset_lite.load	  expires.load	   mem_cache.load     proxy.conf	   ssl.load
+root@Mineosis-deb:/etc/apache2/mods-available# nano /etc/apache2/mods-available/php5.conf
+root@Mineosis-deb:/etc/apache2/mods-available# service apache2 reload
+[ ok ] Reloading web server config: apache2.
+root@Mineosis-deb:/etc/apache2/mods-available# ip address show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN qlen 1000
+    link/ether 00:24:54:d6:2d:9a brd ff:ff:ff:ff:ff:ff
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 90:a4:de:29:43:42 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.43.46/24 brd 192.168.43.255 scope global wlan0
+    inet6 fe80::92a4:deff:fe29:4342/64 scope link 
+       valid_lft forever preferred_lft forever
+root@Mineosis-deb:/etc/apache2/mods-available# cd ..
+root@Mineosis-deb:/etc/apache2# ls
+apache2.conf  conf.d  envvars  magic  mods-available  mods-enabled  ports.conf	sites-available  sites-enabled
+root@Mineosis-deb:/etc/apache2# cd sites-enabled
+root@Mineosis-deb:/etc/apache2/sites-enabled# ls
+000-default
+root@Mineosis-deb:/etc/apache2/sites-enabled# cp 000-default debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-enabled# nano debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-enabled# service apache2 reload
+[FAIL] Reloading web server config: apache2 failed!
+root@Mineosis-deb:/etc/apache2/sites-enabled# a2ensite debianadmin.localhost.conf
+ERROR: Site debianadmin.localhost.conf does not exist!
+root@Mineosis-deb:/etc/apache2/sites-enabled# nano debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-enabled# a2ensite debianadmin.localhost.conf
+ERROR: Site debianadmin.localhost.conf does not exist!
+root@Mineosis-deb:/etc/apache2/sites-enabled# hosts
+bash: hosts: Kommando nicht gefunden.
+root@Mineosis-deb:/etc/apache2/sites-enabled# host
+Usage: host [-aCdlriTwv] [-c class] [-N ndots] [-t type] [-W time]
+            [-R number] [-m flag] hostname [server]
+       -a is equivalent to -v -t ANY
+       -c specifies query class for non-IN data
+       -C compares SOA records on authoritative nameservers
+       -d is equivalent to -v
+       -l lists all hosts in a domain, using AXFR
+       -i IP6.INT reverse lookups
+       -N changes the number of dots allowed before root lookup is done
+       -r disables recursive processing
+       -R specifies number of retries for UDP packets
+       -s a SERVFAIL response should stop query
+       -t specifies the query type
+       -T enables TCP/IP mode
+       -v enables verbose output
+       -w specifies to wait forever for a reply
+       -W specifies how long to wait for a reply
+       -4 use IPv4 query transport only
+       -6 use IPv6 query transport only
+       -m set memory debugging flag (trace|record|usage)
+root@Mineosis-deb:/etc/apache2/sites-enabled# nano /etc/hosts
+root@Mineosis-deb:/etc/apache2/sites-enabled# nano /etc/hosts
+root@Mineosis-deb:/etc/apache2/sites-enabled# nano debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-enabled# a2ensite debianadmin.localhost.conf
+ERROR: Site debianadmin.localhost.conf does not exist!
+root@Mineosis-deb:/etc/apache2/sites-enabled# ls
+000-default  debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-enabled# mv debianadmin.localhost.conf /etc/apache2/sites-available
+root@Mineosis-deb:/etc/apache2/sites-enabled# a2ensite debianadmin.localhost.conf
+Enabling site debianadmin.localhost.conf.
+To activate the new configuration, you need to run:
+  service apache2 reload
+root@Mineosis-deb:/etc/apache2/sites-enabled# service apache2 reload
+[FAIL] Reloading web server config: apache2 failed!
+root@Mineosis-deb:/etc/apache2/sites-enabled# service apache2 restart
+Syntax error on line 1 of /etc/apache2/sites-enabled/debianadmin.localhost.conf:
+Invalid command 'k<VirtualHost', perhaps misspelled or defined by a module not included in the server configuration
+Action 'configtest' failed.
+The Apache error log may have more information.
+ failed!
+root@Mineosis-deb:/etc/apache2/sites-enabled# cd ..
+root@Mineosis-deb:/etc/apache2# ls
+apache2.conf  conf.d  envvars  magic  mods-available  mods-enabled  ports.conf	sites-available  sites-enabled
+root@Mineosis-deb:/etc/apache2# nano apache2.conf
+root@Mineosis-deb:/etc/apache2# nano apache2.conf
+root@Mineosis-deb:/etc/apache2# cd sites-available
+root@Mineosis-deb:/etc/apache2/sites-available# ls
+debianadmin.localhost.conf  default  default-ssl
+root@Mineosis-deb:/etc/apache2/sites-available# nano debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-available# service apache2 reload
+[FAIL] Reloading web server config: apache2 failed!
+root@Mineosis-deb:/etc/apache2/sites-available# service apache2 restart
+apache2: Syntax error on line 268 of /etc/apache2/apache2.conf: Syntax error on line 1 of /etc/apache2/sites-enabled/debianadmin.localhost.conf: /etc/apache2/sites-enabled/debianadmin.localhost.conf:1: <VirtualHost> was not closed.
+Action 'configtest' failed.
+The Apache error log may have more information.
+ failed!
+root@Mineosis-deb:/etc/apache2/sites-available# a2ensite debianadmin.localhost.conf
+Site debianadmin.localhost.conf already enabled
+root@Mineosis-deb:/etc/apache2/sites-available# service apache2 restart
+apache2: Syntax error on line 268 of /etc/apache2/apache2.conf: Syntax error on line 1 of /etc/apache2/sites-enabled/debianadmin.localhost.conf: /etc/apache2/sites-enabled/debianadmin.localhost.conf:1: <VirtualHost> was not closed.
+Action 'configtest' failed.
+The Apache error log may have more information.
+ failed!
+root@Mineosis-deb:/etc/apache2/sites-available# nano debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-available# nano debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-available# service apache2 restart
+[....] Restarting web server: apache2Warning: DocumentRoot [/home/~mineosis/public_html] does not exist
+ ... waiting Warning: DocumentRoot [/home/~mineosis/public_html] does not exist
+. ok 
+root@Mineosis-deb:/etc/apache2/sites-available# nano debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-available# service apache2 restart
+[....] Restarting web server: apache2Warning: DocumentRoot [/home/~mineosis/public_html] does not exist
+ ... waiting Warning: DocumentRoot [/home/~mineosis/public_html] does not exist
+. ok 
+root@Mineosis-deb:/etc/apache2/sites-available# nano debianadmin.localhost.conf
+root@Mineosis-deb:/etc/apache2/sites-available# service apache2 restart
+[ ok ] Restarting web server: apache2 ... waiting .
+root@Mineosis-deb:/etc/apache2/sites-available# cd ..
+root@Mineosis-deb:/etc/apache2# cd /var/log
+root@Mineosis-deb:/var/log# cd apache2
+root@Mineosis-deb:/var/log/apache2# nano warn.log
+root@Mineosis-deb:/var/log/apache2# nano error.log
+root@Mineosis-deb:/var/log/apache2# 
