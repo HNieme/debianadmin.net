@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+}
+body {
+	display: table;
+	width: 100%;
+	background-color: yellow;
+}
+.bereiche_allg {
+    display: table-row;
+    background-color: orange;
+
+}
+#inhalt{
+    background-color: deepskyblue;
+}
+#header{
+
+}
+#nav {
+	
+}
+#nav li {
+
+}
+#hauptteil{
+	
+}
+#footer{
+	display: block;
+	float: left;
+	width: 100%;
+}
+#footer li{
+}
+
+
+
+
+
+
+
+@media only screen and ( max-width: 1000px ){
+
+}
+
+
+
+
+
+
+
+
+
+
+

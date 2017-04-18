@@ -1,10 +1,10 @@
 	<body>
 		<nav id="nav">
-			<div></div>
+			<a href="/"><div></div></a>
 			<ul class="nav_list">
 				<li class="nav_list_element1"><a href="#">Einführung in Debian GNU</a></li>
 				<li class="sub nav_list_element1"><a href="#">Server-Security</a></li>
-				<li class="sub nav_list_element1"><a href="#">Lorem Ipsum</a></li>
+				<li class="sub nav_list_element1"><a href="/democontent.php">Democontent</a></li>
 				<li class="sub2 nav_list_element1"><a href="#">Lorem Ipsum</a></li>
 				<li class="sub3 nav_list_element1"><a href="#">Lorem Ipsum</a></li>
 				<li class="sub2 nav_list_element1"><a href="#">Lorem Ipsum</a></li>

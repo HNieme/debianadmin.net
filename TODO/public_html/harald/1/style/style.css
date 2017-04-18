@@ -1,0 +1,88 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+header{
+	background-color: yellow;
+	width: 100%;
+	float: left;
+	border-bottom: 1px solid black;
+}
+#bereichlogo {
+	color: white;
+	background-color: limegreen;
+	display: block;
+	padding: 0.5em;
+	text-decoration: none;
+	float: left;
+	width: auto;
+}
+#bereichlogo {
+	width: auto;
+}
+#steuerung li {
+	list-style: none;
+	float: left;
+}
+#steuerung a{
+	display: block;
+	height: 100%;
+	width: 100%;
+	padding: 0.5em;
+	text-decoration: none; 	/* keine Unterstreichung*/
+	color: white;       		/* Schriftfarbe weiß*/
+	background-color: gray;	/* Hintergrundfarbe grau*/
+}
+.menue-button {
+	display: none;
+}
+#steuerung {
+	float: right;
+}
+#steuerung a:hover {
+	color: black;
+	background: orange;
+}
+/*eigenes CSS
+.titelbilddiv{
+	width: 100%;
+	height: 
+}
+*/
+/* CSS um MENU-Button und mobile Steuerung erweitern*/
+@media only screen and (max-width:601px) {
+.menue-button {
+	background-color: darkblue;	
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0.5em;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+}
+#bereichlogo{
+	width: 100%;
+}
+#steuerung li {
+	width: 100%;
+	border-bottom: 2px solid silver;
+}
+#steuerung {
+	float: left;
+	width: 100%;
+	display: none;
+}
+.menue-button:hover {
+	color: black;
+	background: orange;
+}
+#nav-menue:target #steuerung {
+	display: block;
+}
+#nav-menue:target .menue-button-beschr-open {
+	display: none;
+}
+}

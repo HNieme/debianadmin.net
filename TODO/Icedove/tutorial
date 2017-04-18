@@ -1,0 +1,92 @@
+Meine Problemstellung:
+
+Ich habe diesen Post ursprünglich hilfesuchend verfasst, habe aber dann doch die Lösung gefunden.
+[b]Damit alle, die ein ähnliches Problem haben nicht mehr ewig rumprobieren müssen hier dieses "Tutorial".[/b]
+Wenn das hier falsch ist einfach verschieben :D
+
+Ich nutze Icedove für das Abrufen meiner Mails.
+Wenn ich von dort aus einen Link öffne, geschieht das immer in Firefox/Iceweasel.
+Ich habe jetzt schon alle möglichen workarounds probiert, geholfen haben folgende nicht:
+(Lösung ganz unten)
+
+VERSUCH 1:
+[code]
+update-alternatives --config x-www-browser
+update-alternatives --all
+[/code]
+Zweiteres ist interessant, weil es auch eine gnomespezifische Einstellung dazu gibt. Beides auf Chrome umgestellt.
+Eine Mailspezifische konnte ich nicht finden.
+Wäre aber auch interessant. Vielleicht später mal.
+Alle Links öffnen jetzt schön brav in Chromium. Nur nicht die aus dem Mailprogramm.
+
+VERSUCH 2:
+http://kb.mozillazine.org/Default_browser#Setting_the_browser_that_opens_in_Thunderbird_-_Linux 
+unter ~/.icedove und unter ~/icedove/XXXXXXXX.default eine user.js angelegt mit folgendem Inhalt:
+[code]
+user_pref("network.protocol-handler.app.http", "/usr/bin/chromium");
+[/code]
+Die Zeilen hat es dann auch, wie erwünscht nach ~/icedove/XXXXXXXX.default/prefs.js übertragen:
+[code]user_pref("network.protocol-handler.app.http", "/usr/bin/chromium");
+user_pref("network.protocol-handler.app.https", "/usr/bin/chromium");
+[/code]
+Gebracht hats nichts.
+Entfernung siehe http://kb.mozillazine.org/User.js_file
+
+VERSUCH 3:
+Firefox/Iceweasel geöffnet und über 
+about:config
+browser.tabs.loadDivertedInBackground durch Doppelklick verändern.
+Zeigt keine Wirkung, außer dass firefox nun nicht mehr in den Vordergrund geholt wird beim Öffnen eines Links
+http://www.techsupportalert.com/content/how-stop-firefox-stealing-window-focus.htm
+
+VERSUCH 4:
+Dann habe ich noch folgenden Workaround gefunden, an dem ich gescheitert bin:
+http://forums.debian.net/viewtopic.php?f=16&t=73043
+Ich finde keine Datei namens mimeTypes.rdf, eine erstellte und mit dem dort angegebenen Inhalt versehene Datei zeigte ebenfalls keine Wirkung:
+[code]<RDF:Description RDF:about="urn:scheme:externalApplication:http"
+NC:prettyName="chromium"
+NC:path="/usr/bin/chromium" />
+<RDF:Description RDF:about="urn:handler:local:/usr/bin/chromium"
+NC:prettyName="chromium"
+NC:path="/usr/bin/chromium" />
+<RDF:Description RDF:about="urn:scheme:handler:http"
+[/code]
+
+
+[b][size=150]LÖSUNG:[/size][/b]
+Icedove öffnen
+Über Bearbeiten -> Einstellungen die Einstellungen öffnen
+Im Tab Allgemein die Startseite 
+Adresse: about:config eingeben, Schließen
+Icedove beenden
+Icedove starten
+dann ist dort, wo normal die mails angezeigt werden eine Warnung.
+Auf die Warnung "Hier endet möglicherweise die Gewährleistung!"
+mit "Ich werde vorsichtig sein, versprochen!" klicken
+Dann die Einträge 
+[code]network.protocol-handler.warn-external.ftp;
+network.protocol-handler.warn-external.http;
+network.protocol-handler.warn-external.https[/code]
+durch Doppelklick auf true stellen
+dann Einstellingen wieder öffnen, die vorherige Einstellung (about) wieder eintragen, alles schließen
+Icedove öffnen
+jetzt solle es wieder wie normal aussehen, mit Mailanzeige statt der Sicherheitswarnung.
+
+Jetzt mail mit folgendem inhalt an sich selbst schicken:
+[code]
+http://debian.org
+https://debian.org
+ftp://debian.org
+[/code]
+
+Mail öffnen
+auf den ersten Link klicken
+im sich öffnenden Fenster die gewünschte Anwendung auswählen oder "Eine Anwendung auswählen - [Durchsuchen] klicken.
+Dort unter /usr/bin/chromium (oder /usr/bin/browsername) auswählen, hinzufügen, "Auswahl für http-Links speichern" auswählen und bestätigen. 
+So mit allen anderen Links auch verfahren.
+
+Fertig
+
+Info:
+Ich habe vor dem Test jeder Änderung den Iceweasel und Icedove durch Klick aufs x beendet und dann neu gestartet durch das Schnellstartmenu links in Gnome.
+

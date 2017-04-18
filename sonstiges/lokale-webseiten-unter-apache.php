@@ -29,7 +29,7 @@ include '../template/nav.php';?>
 				<p>Nun geht es daran, das Verzeichnis <code>~/public_html</code> im Browser aufrufbar zu machen.
 				<br />
 				Dafür erstellst Du zuerst den Ordner public_html in Deinem <code>/home</code> Ordner und gibst ihm anschließend die nötigen Berechtigungen, um dem Webserver den Zugriff zu erlauben. Diesen Befehl als normaler User ausführen.
-				<code class="codeblock">mkdir ~/public_html && chmod 755 ~/public_html</code>
+				<code class="codeblock">mkdir ~/public_html && chmod 0755 ~/public_html</code>
 				</p>
 				<p>
 				Mit dem Befehl a2enmod wird das Apache2 userdir Modul aktiviert. Der Befehl erstellt einen symlink auf /etc/apache2/mods-available/userdir.load und /etc/apache2/mods-available/userdir.conf im Ordner /etc/apache2/mods-enable/ . Den Befehl als Root ausführen
@@ -52,7 +52,7 @@ include '../template/nav.php';?>
 				<p>Dieser Schritt ist nur notwendig, wenn man PHP nutzen möchte. Ansonsten kann man den Folgenden Schritt überspringen.</p>
 				<p>Normalerweise ist PHP im Homeverzeichnis deaktiviert, sodass alle .php-Dateien als mime-type Application/octet-stream behandelt werden und bei Aufruf der Datei heruntergeladen werden.</p>
 				<p>Mit <code>nano /etc/apache2/mods-available/php5.conf</code>, ausgeführt als Root, wird die PHP-Konfigurationsdatei geöffnet und die Zeile <code>php_admin_value engine Off</code> auskomentiert, also die Raute vor Beginn des Textes entfernt.</p>
-				<p>Unter Debian 8 sieht das ein wenig anders aus, hier muss ein ganzer Block auskommentiert werden: </p>
+				<p>Unter Debian 8 sieht das ein wenig anders aus, hier muss folgende Änderung vorgenommen werden: </p>
 				<p>Vorher:</p>
 				<code class="codeblock">
 				&lt;FilesMatch &quot;.+\.ph(p[345]?|t|tml)$&quot;&gt;
@@ -142,10 +142,10 @@ include '../template/nav.php';?>
 				<br />ff02::1 ip6-allnodes<br />
 				ff02::2 ip6-allrouters</code>
 				<p>Domainendungen sollten sein: .localhost, .home, .test <br /> 
-				Andere existieren möglicherweise schon im Internet, was dann zu Fehlern führen würde.</p>
+				Andere existieren möglicherweise schon im Internet, was dann zu Fehlern führen würde!</p>
 				
 				<h2>Virtuellen Host unter Apache erstellen</h2>
-				<p>Nun muss der Apache noch angewiesen werden, bei Anfragen an die gerade "erstellte" Domain auch die passende Webseite auszuliefern.</p>
+				<p>Nun muss der Apache noch angewiesen werden, bei Anfragen an die gerade "erstellte" Domain auch die passende Webseite auszuliefern. Dies geschieht per Virtual Host.</p>
 				<span class="info">
 				In der Standardkonfiguration liefert ein Apache2, egal über welche Domain er die Anfrage bekommt, immer Dateien über den selben Pfad aus, es ist also egal ob man 
 				http://127.0.0.1/verzeichnis/index.html oder http://MEINEDOMAIN.localhost/verzeichnis/index.html aufruft. 
@@ -157,7 +157,7 @@ include '../template/nav.php';?>
 				<code class="codeblock">
 &lt;VirtualHost *:80&gt;<br />
         ServerName <span class="change">DEINEDOMAIN.home</span><br />
-        DocumentRoot /home/<span class="change">DEINUSERNAME</span>/www_data/<span class="change">Ordnername</span><br />
+        DocumentRoot /home/<span class="change">DEINUSERNAME</span>.localhost/www_data/<span class="change">Ordnername</span><br />
         ErrorLog ${APACHE_LOG_DIR}/error.log<br />
         CustomLog ${APACHE_LOG_DIR}/access.log combined<br />
 &lt;/VirtualHost&gt;			
@@ -174,8 +174,6 @@ To activate the new configuration, you need to run:<br />
 
 				</code>
 				
-				<p>Anschließend muss noch ein Ordner im Ordner <code>public_html</code> angelegt werden, der den in der Virtual-Host Konfigurationsdatei angegebenen Namen trägt. Darin wird die Webseite abgelegt.</p>
-				<p>Anschließend kann sie über den Browser unter folgender Adresse abgerufen werden: <code>http://MEINEDOMAIN.home</code>. Wenn andere Domainendungen wie etwa .test oder .localhost verwendet wurden, ist die Adresse entsprechend zu verändern. Es ist auch möglich, das Verzeichnis <code>/home/USERNAME/public_html/</code> anzuzeigen, dies geschieht per <code>http://127.0.0.1/~USERNAME</code>.</p>
 				
 					
 			</article>
