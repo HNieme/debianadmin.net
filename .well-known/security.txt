@@ -1,0 +1,5 @@
+Contact: mailto:postmaster@niemeczek.at
+Encryption: https://niemeczek.at/GnuPG/Harald%20Niemeczek%20harald@niemeczek.at%20(0x68A0EF1D)%20pub.asc
+Acknowledgments: Will be created when the need arises
+Preferred-Languages: de, en
+Canonical: https://debianadmin.net/.well-known/security.txt
