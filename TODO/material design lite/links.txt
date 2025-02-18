@@ -1,7 +1,0 @@
-http://www.getmdl.io/components/index.html#layout-section
-
-http://www.getmdl.io/started/index.html#download
-
-<link rel="stylesheet" href="./material.min.css">
-<script src="./material.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

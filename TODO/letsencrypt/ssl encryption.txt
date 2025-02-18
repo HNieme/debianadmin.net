@@ -1,8 +1,0 @@
-Blog SSL Encryption
-
-http://www.heise.de/newsticker/meldung/Vorsicht-bei-kostenlosen-SSL-Zertifikaten-137817.html
-Nicht mehr aktuell!
-
-startssl vo startcom
-
-
